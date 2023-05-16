@@ -1,4 +1,4 @@
-import { lato, roboto_serif } from './fonts';
+import { lato, noto_serif } from './fonts';
 import './globals.css';
 
 export const metadata = {
@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${lato.variable} ${roboto_serif.variable}`}>
+    <html lang="en" className={`${lato.variable} ${noto_serif.variable}`}>
       <body>{children}</body>
     </html>
   );

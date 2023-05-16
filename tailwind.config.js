@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['var(--font-lato)'],
-        serif: ['var(--font-roboto-serif)'],
+        serif: ['var(--font-noto-serif)'],
       },
     },
   },
