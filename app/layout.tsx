@@ -1,17 +1,5 @@
-import { Inter, Roboto_Mono } from 'next/font/google';
+import { lato, roboto_serif } from './fonts';
 import './globals.css';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const roboto_mono = Roboto_Mono({
-  subsets: ['latin'],
-  variable: '--font-roboto-mono',
-  display: 'swap',
-});
 
 export const metadata = {
   title: 'OA-Next',
@@ -24,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${roboto_mono.variable}`}>
+    <html lang="en" className={`${lato.variable} ${roboto_serif.variable}`}>
       <body>{children}</body>
     </html>
   );

@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main>
       <h1>The Home Page</h1>
-      <h2 className="font-mono">Roboto Mono</h2>
+      <h2 className="font-serif">Roboto Serif</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
         doloremque mollitia atque voluptatem soluta, qui quibusdam ut accusamus
