@@ -19,7 +19,7 @@ const NavBar = () => {
           : 'bg-white/0'
       } z-30 flex h-16 w-full items-center justify-between px-8 transition-all`}
     >
-      <Link className="max-w-[90px]" href="/">
+      <Link className="max-w-[136px]" href="/">
         <Image src={Logo} alt="Gallery Logo" />
       </Link>
       <nav>
