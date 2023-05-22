@@ -1,3 +1,4 @@
+import Footer from '@/components/layout/Footer';
 import NavBar from '@/components/layout/NavBar';
 
 import './globals.css';
@@ -16,9 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${lato.variable} ${noto_serif.variable}`}>
-      <body>
+      <body className="my-16">
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
