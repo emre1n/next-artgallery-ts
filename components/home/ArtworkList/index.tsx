@@ -1,4 +1,7 @@
+import Link from 'next/link';
+
 import { TArtworkListItemModel } from '@/libs/models/artwork.model';
+import { link } from 'fs';
 
 import ArtworkItem from '../ArtworkItem';
 
@@ -8,17 +11,22 @@ type ArtworkListProps = {
 
 export default function ArtworkList({ artworks }: ArtworkListProps) {
   return (
-    <ul className="flex flex-col items-center border-none">
-      {artworks.map(artwork => (
-        <ArtworkItem
-          key={artwork.id}
-          id={artwork.id}
-          image={artwork.image}
-          title={artwork.title}
-          artist={artwork.artist}
-          description={artwork.description}
-        />
-      ))}
-    </ul>
+    <section className="flex justify-center md:mx-[120px] md:py-20">
+      <ul className="flex flex-col gap-6 md:flex-row md:flex-wrap">
+        {artworks.map(artwork => (
+          <div key={artwork.id}>
+            <Link href={`/artwork/${artwork.id}`}>
+              <ArtworkItem
+                id={artwork.id}
+                image={artwork.image}
+                title={artwork.title}
+                artist={artwork.artist}
+                description={artwork.description}
+              />
+            </Link>
+          </div>
+        ))}
+      </ul>
+    </section>
   );
 }
