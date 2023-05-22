@@ -1,5 +1,5 @@
 export type TArtworkListItemModel = {
-  id: string;
+  artwork_id: string;
   image: string;
   title: string;
   artist: string;

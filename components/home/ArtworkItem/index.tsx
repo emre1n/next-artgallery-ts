@@ -9,11 +9,11 @@ import Card from '../../ui/Card';
 
 type ArtworkProps = TArtworkListItemModel;
 
-function ArtworkItem({ id, image, title, artist }: ArtworkProps) {
+function ArtworkItem({ artwork_id, image, title, artist }: ArtworkProps) {
   const router = useRouter();
 
   const showDetailsHandler = () => {
-    router.push('/artwork/' + id);
+    router.push('/artwork/' + artwork_id);
   };
 
   return (
