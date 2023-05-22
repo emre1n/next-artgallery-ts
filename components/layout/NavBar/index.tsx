@@ -3,21 +3,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import useScroll from '@/lib/hooks/use-scroll';
-
 import Burger from '../../../public/images/navburger.png';
 import Logo from '../../../public/logos/logo1.png';
 
 const NavBar = () => {
-  const scrolled = useScroll(64);
-
   return (
     <header
-      className={`fixed top-0 ${
-        scrolled
-          ? 'border-b border-gray-200 bg-white/50 backdrop-blur-xl'
-          : 'bg-white/0'
-      } z-30 flex h-16 w-full items-center justify-between px-8 transition-all`}
+      className={`sticky top-0 z-30 flex h-16 w-full items-center justify-between bg-white px-8 transition-all`}
     >
       <Link className="max-w-[136px]" href="/">
         <Image src={Logo} alt="Gallery Logo" />
