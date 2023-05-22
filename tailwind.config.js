@@ -11,6 +11,11 @@ module.exports = {
         sans: ['var(--font-lato)'],
         serif: ['var(--font-noto-serif)'],
       },
+      colors: {
+        gray: {
+          text: '#64748B',
+        },
+      },
     },
   },
   plugins: [],

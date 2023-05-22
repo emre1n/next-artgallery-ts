@@ -1,5 +1,8 @@
-import { lato, noto_serif } from './fonts';
+import NavBar from '@/components/layout/NavBar';
+
 import './globals.css';
+
+import { lato, noto_serif } from './fonts';
 
 export const metadata = {
   title: 'OA-Next',
@@ -13,7 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${lato.variable} ${noto_serif.variable}`}>
-      <body>{children}</body>
+      <body>
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }
