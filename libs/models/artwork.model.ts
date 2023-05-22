@@ -4,4 +4,8 @@ export type TArtworkListItemModel = {
   title: string;
   artist: string;
   description: string;
+  edition: number;
+  remaining_edition: number;
+  price: number;
+  currency: string;
 };

@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 import { TArtworkListItemModel } from '@/libs/models/artwork.model';
 
@@ -9,29 +8,40 @@ import Card from '../../ui/Card';
 
 type ArtworkProps = TArtworkListItemModel;
 
-function ArtworkItem({ artwork_id, image, title, artist }: ArtworkProps) {
-  const router = useRouter();
-
-  const showDetailsHandler = () => {
-    router.push('/artwork/' + artwork_id);
-  };
-
+function ArtworkItem({
+  artwork_id,
+  image,
+  title,
+  artist,
+  edition,
+  remaining_edition,
+  price,
+  currency,
+}: ArtworkProps) {
   return (
     <li>
       <Card>
-        <div className="relative h-[282px] w-[282px] overflow-hidden">
-          <Image
-            className="object-cover"
-            src={image}
-            alt={title}
-            // width={500}
-            // height={500}
-            fill={true}
-          />
+        <div className="flex flex-col gap-4">
+          <div className="relative h-[282px] w-[282px] overflow-hidden">
+            <Image
+              className="object-cover"
+              src={image}
+              alt={title}
+              // width={500}
+              // height={500}
+              fill={true}
+            />
+          </div>
+
+          <div>
+            <p className="text-grey-900 text-lg">{artist}</p>
+            <p className="text-grey-900 text-xl italic">{title}</p>
+          </div>
         </div>
-        <div className="bg-slate-100">
-          <p className="text-grey-900 text-lg">{artist}</p>
-          <p className="text-grey-900 text-xl italic">{title}</p>
+        <div>
+          <p className="text-grey-900 text-sm">{`${edition} editions`}</p>
+          <p className="text-grey-900 text-sm">{`${remaining_edition}/${edition} remaining`}</p>
+          <p className="text-grey-900 text-sm font-bold">{`${price} ${currency}`}</p>
         </div>
       </Card>
     </li>
