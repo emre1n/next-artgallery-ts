@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { TArtworkListItemModel } from '@/lib/models/artwork.model';
 
-import ArtworkItem from '../ArtworkItem';
+import ArtworkItem from '../../shared/ArtworkItem';
 
 type ArtworkListProps = {
   artworks: TArtworkListItemModel[];
@@ -11,7 +11,7 @@ type ArtworkListProps = {
 export default function ArtworkList({ artworks }: ArtworkListProps) {
   return (
     <section className="flex flex-col justify-center gap-8 py-10 md:mx-[120px] md:py-20">
-      <div className="text-lg">Featured artworks</div>
+      <div className="text-lg">Collection</div>
       <div>
         <ul className="flex flex-col gap-6 md:flex-row md:flex-wrap">
           {artworks.map(
@@ -21,6 +21,7 @@ export default function ArtworkList({ artworks }: ArtworkListProps) {
               title,
               artist,
               description,
+              isFeatured,
               edition,
               remaining_edition,
               price,
@@ -34,6 +35,7 @@ export default function ArtworkList({ artworks }: ArtworkListProps) {
                     title={title}
                     artist={artist}
                     description={description}
+                    isFeatured={isFeatured}
                     edition={edition}
                     remaining_edition={remaining_edition}
                     price={price}

@@ -18,7 +18,7 @@ const NavBar = () => {
         </Link>
         <ul className="hidden gap-8 text-gray-text md:flex">
           <li className="border-b border-white py-2 duration-500 hover:border-black hover:text-black">
-            <Link href="/">Collection</Link>
+            <Link href="/collection">Collection</Link>
           </li>
           <li className="border-b border-white py-2 duration-500 hover:border-black hover:text-black">
             <Link href="/add-new-artwork">Add New Artwork</Link>

@@ -13,6 +13,7 @@ export default function HeroSection() {
             alt="Hero Image"
             width={800}
             height={600}
+            priority={true}
           />
         </div>
         <div>
