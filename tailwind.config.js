@@ -13,6 +13,8 @@ module.exports = {
       },
       colors: {
         gray: {
+          label: '#060606',
+          lightlabel: '#484848',
           text: '#64748B',
           background: '#F1F5F9',
         },

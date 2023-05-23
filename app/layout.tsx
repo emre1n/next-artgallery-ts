@@ -17,9 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${lato.variable} ${noto_serif.variable}`}>
-      <body className="flex min-h-screen flex-col justify-between">
+      <body className="min-w-screen flex flex-col justify-between">
         <NavBar />
-        <div>{children}</div>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

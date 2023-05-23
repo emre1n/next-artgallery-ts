@@ -22,14 +22,14 @@ function ArtworkItem({
     <li>
       <Card>
         <div className="flex flex-col gap-4">
-          <div className="relative h-[282px] w-[282px] overflow-hidden">
+          <div className="flex h-[282px] w-[282px] overflow-hidden">
             <Image
-              className="object-cover"
+              className="max-w-[282px] object-cover object-center"
               src={image}
               alt={title}
-              // width={500}
-              // height={500}
-              fill={true}
+              width={800}
+              height={600}
+              // fill={true}
             />
           </div>
 
