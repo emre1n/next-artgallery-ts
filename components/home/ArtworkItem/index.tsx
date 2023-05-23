@@ -34,14 +34,14 @@ function ArtworkItem({
           </div>
 
           <div>
-            <p className="text-grey-900 text-lg">{artist}</p>
-            <p className="text-grey-900 text-xl italic">{title}</p>
+            <p className="text-lg text-gray-main">{artist}</p>
+            <p className="text-xl italic text-gray-lightlabel">{title}</p>
           </div>
         </div>
         <div>
-          <p className="text-grey-900 text-sm">{`${edition} editions`}</p>
-          <p className="text-grey-900 text-sm">{`${remaining_edition}/${edition} remaining`}</p>
-          <p className="text-grey-900 text-sm font-bold">{`${price} ${currency}`}</p>
+          <p className="text-sm text-gray-main">{`${edition} editions`}</p>
+          <p className="text-sm text-gray-main">{`${remaining_edition}/${edition} remaining`}</p>
+          <p className="text-sm font-bold text-gray-main">{`${price} ${currency}`}</p>
         </div>
       </Card>
     </li>

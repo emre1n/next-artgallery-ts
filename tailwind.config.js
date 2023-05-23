@@ -13,9 +13,9 @@ module.exports = {
       },
       colors: {
         gray: {
-          label: '#060606',
+          main: '#060606',
           lightlabel: '#484848',
-          text: '#64748B',
+          text: '#94A3B8',
           background: '#F1F5F9',
         },
       },
