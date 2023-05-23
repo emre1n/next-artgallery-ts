@@ -1,4 +1,5 @@
 import ArtworkList from '@/components/home/ArtworkList';
+import HeroSection from '@/components/home/HeroSection';
 
 const DUMMY_ARTWORKS = [
   {
@@ -71,6 +72,7 @@ const DUMMY_ARTWORKS = [
 export default function Home() {
   return (
     <main>
+      <HeroSection />
       <ArtworkList artworks={DUMMY_ARTWORKS} />
     </main>
   );

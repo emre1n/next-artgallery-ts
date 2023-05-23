@@ -29,7 +29,6 @@ function ArtworkItem({
               alt={title}
               width={800}
               height={600}
-              // fill={true}
             />
           </div>
 
