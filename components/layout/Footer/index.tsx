@@ -28,9 +28,9 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex gap-4 text-gray-text">
-        <BsTwitter size={24} />
-        <BsInstagram size={24} />
-        <BsDiscord size={24} />
+        <BsTwitter size={18} />
+        <BsInstagram size={18} />
+        <BsDiscord size={18} />
       </div>
     </footer>
   );
