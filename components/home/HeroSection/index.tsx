@@ -10,7 +10,7 @@ export default function HeroSection() {
     featuredArtwork!;
   return (
     <section className="flex w-full flex-col gap-8 md:flex-row">
-      <aside className="flex w-full flex-col md:w-1/2">
+      <aside className="flex w-full flex-col gap-4 md:w-1/2">
         <div className="w-full">
           <Link href={`/artwork/${artwork_id}`}>
             <Image
@@ -23,7 +23,7 @@ export default function HeroSection() {
             />
           </Link>
         </div>
-        <div className="flex w-full flex-col gap-2">
+        <div className="flex w-full flex-col">
           <p className="text-xl text-gray-main">{artist}</p>
           <p className="text-xl italic text-gray-lightlabel">{title}</p>
         </div>
