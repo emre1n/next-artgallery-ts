@@ -8,7 +8,7 @@ import Logo from '../../../public/logos/logo1.png';
 
 const NavBar = () => {
   return (
-    <header className="sticky top-0 z-30 flex h-16 w-full items-center justify-between bg-white">
+    <header className="sticky top-0 z-30 flex h-16 w-full items-center justify-between bg-white px-8">
       {/* <div className="absolute left-0 top-16 h-screen w-full bg-slate-400"></div> */}
       <Link className="max-w-[136px]" href="/">
         <Image src={Logo} width={600} height={600} alt="Gallery Logo" />

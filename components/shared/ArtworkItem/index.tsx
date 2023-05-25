@@ -18,7 +18,7 @@ function ArtworkItem({
 }: ArtworkProps) {
   return (
     <div className="flex h-[460px] w-full flex-col justify-between md:w-[282px]">
-      <div className="flex flex-col gap-4 ring">
+      <div className="flex flex-col gap-4">
         <div className="flex h-[300px]">
           <Image
             className="object-cover object-center md:max-w-[282px]"

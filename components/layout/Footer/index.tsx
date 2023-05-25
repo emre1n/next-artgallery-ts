@@ -20,7 +20,7 @@ export default function Footer() {
             alt="Gray Gallery Logo"
           />
         </Link>
-        <div className="flex items-center gap-8 text-gray-text">
+        <div className="hidden items-center gap-8 text-gray-text md:flex">
           <div>© One Art 2023</div>
           <div>Terms</div>
           <div>Privacy</div>

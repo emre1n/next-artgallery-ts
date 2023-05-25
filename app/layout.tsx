@@ -20,9 +20,9 @@ export default function RootLayout({
       lang="en"
       className={`${lato.variable} ${noto_serif.variable} relative flex flex-col items-center justify-center`}
     >
-      <body className="flex min-h-screen w-full max-w-[1800px] flex-col items-center justify-between gap-8 overflow-x-hidden px-10 md:gap-16 md:px-20">
+      <body className="flex min-h-screen w-full max-w-[1800px] flex-col items-center justify-between gap-8 overflow-x-hidden md:gap-16">
         <NavBar />
-        <main className="w-full">{children}</main>
+        <main className="w-full px-10 md:px-20">{children}</main>
         <Footer />
       </body>
     </html>
