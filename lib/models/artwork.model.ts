@@ -5,6 +5,7 @@ export type TArtworkListItemModel = {
   artist: string;
   description: string;
   isFeatured: boolean;
+  onFrontpage?: boolean;
   edition: number;
   remaining_edition: number;
   price: number;

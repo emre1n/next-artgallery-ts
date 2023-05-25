@@ -4,8 +4,6 @@ import Image from 'next/image';
 
 import { TArtworkListItemModel } from '@/lib/models/artwork.model';
 
-import Card from '../../ui/Card';
-
 type ArtworkProps = TArtworkListItemModel;
 
 function ArtworkItem({
@@ -19,31 +17,28 @@ function ArtworkItem({
   currency,
 }: ArtworkProps) {
   return (
-    <li>
-      <Card>
-        <div className="flex flex-col gap-4">
-          <div className="flex h-[282px] w-[282px] overflow-hidden">
-            <Image
-              className="max-w-[282px] object-cover object-center"
-              src={image}
-              alt={title}
-              width={800}
-              height={600}
-            />
-          </div>
-
-          <div>
-            <p className="text-lg text-gray-main">{artist}</p>
-            <p className="text-xl italic text-gray-lightlabel">{title}</p>
-          </div>
+    <div className="flex h-[460px] w-full flex-col justify-between md:w-[282px]">
+      <div className="flex flex-col gap-4 ring">
+        <div className="flex h-[300px]">
+          <Image
+            className="object-cover object-center md:max-w-[282px]"
+            src={image}
+            alt={title}
+            width={800}
+            height={600}
+          />
         </div>
         <div>
-          <p className="text-sm text-gray-main">{`${edition} editions`}</p>
-          <p className="text-sm text-gray-main">{`${remaining_edition}/${edition} remaining`}</p>
-          <p className="text-sm font-bold text-gray-main">{`${price} ${currency}`}</p>
+          <p className="text-lg text-gray-main">{artist}</p>
+          <p className="text-xl italic text-gray-lightlabel">{title}</p>
         </div>
-      </Card>
-    </li>
+      </div>
+      <div>
+        <p className="text-sm text-gray-main">{`${edition} editions`}</p>
+        <p className="text-sm text-gray-main">{`${remaining_edition}/${edition} remaining`}</p>
+        <p className="text-sm font-bold text-gray-main">{`${price} ${currency}`}</p>
+      </div>
+    </div>
   );
 }
 

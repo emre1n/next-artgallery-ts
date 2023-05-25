@@ -1,44 +1,44 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
-import heroImage from '../../../public/images/heroimage.png';
+import { DUMMY_ARTWORKS } from '@/data/artwork-data';
+import { TArtworkListItemModel } from '@/lib/models/artwork.model';
 
 export default function HeroSection() {
+  const featuredArtwork = DUMMY_ARTWORKS.find(obj => obj.onFrontpage === true);
+  const { artwork_id, image, title, artist }: TArtworkListItemModel =
+    featuredArtwork!;
   return (
-    <section className="flex justify-center gap-11 py-10 md:mx-[120px] md:py-20">
-      <div className="flex flex-col gap-4">
-        <div className="flex h-[600px] w-[800px] overflow-hidden">
-          <Image
-            className="max-w-[800px] object-cover object-center"
-            src={heroImage}
-            alt="Hero Image"
-            width={800}
-            height={600}
-            priority={true}
-          />
+    <section className="flex w-full flex-col gap-8 md:flex-row">
+      <aside className="flex w-full flex-col md:w-1/2">
+        <div className="w-full">
+          <Link href={`/artwork/${artwork_id}`}>
+            <Image
+              className="w-full object-cover object-center"
+              src={image}
+              alt="Frontpage Image"
+              width={1024}
+              height={768}
+              priority={true}
+            />
+          </Link>
         </div>
-        <div>
-          <p className="text-xl text-gray-main">Robert Delaunay</p>
-          <p className="text-xl italic text-gray-lightlabel">
-            Champs de Mars: The Red Tower
-          </p>
+        <div className="flex w-full flex-col gap-2">
+          <p className="text-xl text-gray-main">{artist}</p>
+          <p className="text-xl italic text-gray-lightlabel">{title}</p>
         </div>
-      </div>
-      <div className="flex flex-col justify-center pb-[72px]">
-        <div className="flex flex-col gap-4 font-serif">
-          <p className="font-serif text-4xl">
-            Discover the brilliant works of contemporary artists
-          </p>
-          <div className="flex flex-col gap-8">
-            <p className="font-serif text-xl">
-              Discover art works from our collection of contemporary pieces
-            </p>
-            <p className="font-serif text-xl">
-              Our wide variety of curated galleries and local exhibitions
-              presents the works of outstanding artists
-            </p>
-          </div>
-        </div>
-      </div>
+      </aside>
+      <aside className="flex flex-col items-center justify-center md:w-1/2">
+        <h2 className="font-serif text-4xl">
+          Discover the brilliant works of contemporary artists
+        </h2>
+        <p className="font-serif text-xl">
+          Discover art works from our collection of contemporary pieces
+          <br />
+          Our wide variety of curated galleries and local exhibitions presents
+          the works of outstanding artists
+        </p>
+      </aside>
     </section>
   );
 }

@@ -10,10 +10,10 @@ type ArtworkListProps = {
 
 export default function ArtworkList({ artworks }: ArtworkListProps) {
   return (
-    <section className="flex flex-col justify-center gap-8 py-10 md:mx-[120px] md:py-20">
+    <section className="flex flex-col items-center justify-center gap-8">
       <div className="text-lg">Collection</div>
       <div>
-        <ul className="flex flex-col gap-6 md:flex-row md:flex-wrap">
+        <div className="flex flex-col gap-6 md:flex-row md:flex-wrap">
           {artworks.map(
             ({
               artwork_id,
@@ -45,7 +45,7 @@ export default function ArtworkList({ artworks }: ArtworkListProps) {
               </div>
             ),
           )}
-        </ul>
+        </div>
       </div>
     </section>
   );

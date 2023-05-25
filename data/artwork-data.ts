@@ -8,6 +8,7 @@ export const DUMMY_ARTWORKS = [
     description:
       'Bedroom in Arles (first version, 1888). Oil on canvas, 72 × 90 cm (28.3 × 35.4 in). Van Gogh Museum, Amsterdam',
     isFeatured: true,
+    onFrontpage: false,
     edition: 100,
     remaining_edition: 72,
     price: 200,
@@ -22,6 +23,7 @@ export const DUMMY_ARTWORKS = [
     description:
       'Van Gogh has described with joy his visit to the Mediterranean shore near Arles at the fishing village of Sainte-Maries, where he painted and drew for several days. It was a new world for him, and he responded to it with his usual eagerness and excitement. June 1888. Van Gogh Museum, Amsterdam',
     isFeatured: true,
+    onFrontpage: true,
     edition: 100,
     remaining_edition: 72,
     price: 200,
@@ -36,6 +38,7 @@ export const DUMMY_ARTWORKS = [
     description:
       'Landscape at Collioure is an oil-on-canvas painting by French artist Henri Matisse from 1905. It is typical of his Fauvist style of the period. It is part of the collection of the Museum of Modern Art, in New York.',
     isFeatured: true,
+    onFrontpage: false,
     edition: 100,
     remaining_edition: 72,
     price: 200,
@@ -50,6 +53,7 @@ export const DUMMY_ARTWORKS = [
     description:
       'Girl with a Mandolin is a 1910 painting within the Cubist movement by Pablo Picasso in Paris. The artwork was one of Picasso’s early Analytic Cubist creations. It currently forms part of the collection of The Museum of Modern Art in New York.',
     isFeatured: true,
+    onFrontpage: false,
     edition: 100,
     remaining_edition: 72,
     price: 200,
@@ -64,6 +68,7 @@ export const DUMMY_ARTWORKS = [
     description:
       'I and the Village is an oil-on-canvas painting by the Belarusian-French artist Marc Chagall created in 1911. It is exhibited at the Museum of Modern Art, New York. The work is Cubist in construction and contains many soft, dreamlike images overlapping one another in a continuous space.',
     isFeatured: false,
+    onFrontpage: false,
     edition: 100,
     remaining_edition: 72,
     price: 200,
