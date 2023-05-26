@@ -72,9 +72,8 @@ export default function AddNewArtworkForm() {
       </div>
       <div className="flex flex-col">
         <label>Description</label>
-        <input
+        <textarea
           className="border-b border-gray-text focus:outline-none"
-          type="text"
           {...register('description')}
         />
         <p className="text-red-500">{errors.description?.message}</p>
@@ -123,7 +122,7 @@ export default function AddNewArtworkForm() {
           file:border-0 file:bg-gray-200
           file:px-4
           file:py-2 file:font-semibold
-          hover:file:bg-black hover:file:text-white 
+          file:duration-500 hover:file:bg-black hover:file:text-white
         "
           type="file"
           {...register('image')}
@@ -151,7 +150,9 @@ export default function AddNewArtworkForm() {
         </div>
       </div>
       <div className="flex justify-end">
-        <button className="bg-slate-500 px-4 py-1 text-white">Submit</button>
+        <button className="bg-slate-500 px-4 py-1 text-white duration-500 hover:bg-slate-400">
+          Submit
+        </button>
       </div>
     </form>
   );
