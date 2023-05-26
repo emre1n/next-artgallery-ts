@@ -4,6 +4,7 @@ import { CURRENCY_CODES } from '@/lib/constants/CURRENCY_CODES';
 import { TArtworkListItemModel } from '@/lib/models/artwork.model';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import { v4 as uuidv4 } from 'uuid';
 import * as Yup from 'yup';
 
 export default function AddNewArtworkForm() {
@@ -31,7 +32,7 @@ export default function AddNewArtworkForm() {
   } = useForm<TArtworkListItemModel>({
     resolver: yupResolver(validationSchemaAddForm),
     defaultValues: {
-      // artwork_id: '',
+      artwork_id: uuidv4(),
       image: '',
       title: '',
       artist: '',
