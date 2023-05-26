@@ -1,4 +1,4 @@
-import AddNewArtworkForm from '@/components/dashboard/add-new-artwork/NewArtworkForm';
+import AddNewArtworkForm from '@/components/dashboard/artworks/NewArtworkForm';
 
 export default function ArtworkCreatePage() {
   return (

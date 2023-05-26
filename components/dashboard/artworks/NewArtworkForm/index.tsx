@@ -42,7 +42,7 @@ export default function AddNewArtworkForm() {
       edition: 0,
       // remaining_edition: 0,
       price: 0,
-      // currency: '',
+      currency: '',
     },
   });
 
