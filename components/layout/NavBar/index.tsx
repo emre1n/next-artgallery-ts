@@ -61,7 +61,7 @@ const NavBar = () => {
             <Link href="/collection">Collection</Link>
           </li>
           <li className="border-b border-white py-2 duration-500 hover:border-black hover:text-black">
-            <Link href="/add-new-artwork">Add New Artwork</Link>
+            <Link href="/dashboard">Dashboard</Link>
           </li>
           <li className="border-b border-white py-2 duration-500 hover:border-black hover:text-black">
             <Link href="/login">Sign in</Link>
