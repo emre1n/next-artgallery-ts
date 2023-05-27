@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { TArtworkListItemModel } from '@/lib/models/artwork.model';
+import { TArtworkListItemModel } from '@/libs/models/artwork.model';
 
 import ArtworkItem from '../../shared/ArtworkItem';
 

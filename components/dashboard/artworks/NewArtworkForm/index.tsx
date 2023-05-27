@@ -1,7 +1,7 @@
 'use client';
 
-import { CURRENCY_CODES } from '@/lib/constants/CURRENCY_CODES';
-import { TArtworkListItemModel } from '@/lib/models/artwork.model';
+import { CURRENCY_CODES } from '@/libs/constants/CURRENCY_CODES';
+import { TArtworkListItemModel } from '@/libs/models/artwork.model';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { v4 as uuidv4 } from 'uuid';

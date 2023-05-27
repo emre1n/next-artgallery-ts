@@ -2,26 +2,32 @@
 
 import Image from 'next/image';
 
+import { TArtworkListItemModel } from '@/libs/models/artwork.model';
 import { useGalleryStore } from '@/stores/store';
 
 type TProps = { artwork_id: string };
 
 export default function ArtworkDetailsPage({ params }: { params: TProps }) {
   const artworks = useGalleryStore(store => store.artworks);
-  const artwork = artworks.find(
+  const artwork: TArtworkListItemModel | undefined = artworks.find(
     artwork => artwork.artwork_id === params.artwork_id,
   );
   console.log('params', params);
   return (
-    <>
-      <h1>Detail Page</h1>
-      <p>id: {params.artwork_id}</p>
+    <div className="flex max-w-4xl flex-col gap-16 bg-background p-16">
       <Image
         src={artwork!.image}
-        width={1024}
-        height={768}
-        alt={artwork!.title}
+        alt={`Artwork by ${artwork!.artist}`}
+        className="h-72 w-full object-contain"
+        width={769}
+        height={1024}
       />
-    </>
+      <div className="flex flex-col gap-2">
+        <div className="text-xl font-bold text-primary">{artwork!.title}</div>
+        <p className="italic text-secondary">{artwork!.artist}</p>
+        <p className="text-secondary">{artwork!.description}</p>
+        {/* <p className="text-secondary">{artwork!.price}</p> */}
+      </div>
+    </div>
   );
 }

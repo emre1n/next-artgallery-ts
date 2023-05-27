@@ -1,5 +1,5 @@
 import { DUMMY_ARTWORKS } from '@/data/artwork-data';
-import { TArtworkListItemModel } from '@/lib/models/artwork.model';
+import { TArtworkListItemModel } from '@/libs/models/artwork.model';
 import { create } from 'zustand';
 
 type TGalleryStore = {

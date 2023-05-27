@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { TArtworkListItemModel } from '@/lib/models/artwork.model';
+import { TArtworkListItemModel } from '@/libs/models/artwork.model';
 
 type TProps = { artworks: TArtworkListItemModel[] };
 
@@ -34,7 +34,7 @@ export default function HeroSection({ artworks }: TProps) {
           <p className="text-xl italic text-secondary">{title}</p>
         </div>
       </aside>
-      <aside className="flex flex-col items-center justify-center md:w-1/2">
+      <aside className="flex flex-col items-center justify-center gap-8 md:w-1/2">
         <h2 className="font-serif text-3xl text-primary lg:text-4xl">
           Discover the brilliant works of contemporary artists
         </h2>
