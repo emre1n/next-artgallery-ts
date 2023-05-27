@@ -1,12 +1,15 @@
+'use client';
+
 import { useMemo } from 'react';
 
 import Link from 'next/link';
 
 import ArtworkTable from '@/components/dashboard/artworks/ArtworkTable';
-import { DUMMY_ARTWORKS } from '@/data/artwork-data';
+import { useGalleryStore } from '@/stores/store';
 
 export default function ArtworksListPage() {
-  const data = useMemo(() => DUMMY_ARTWORKS, []);
+  const artworks = useGalleryStore(store => store.artworks);
+  const data = useMemo(() => artworks, [artworks]);
 
   return (
     <section className="flex w-full flex-col gap-4 px-8 py-4">

@@ -1,11 +1,17 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { DUMMY_ARTWORKS } from '@/data/artwork-data';
 import { TArtworkListItemModel } from '@/lib/models/artwork.model';
 
-export default function HeroSection() {
-  const featuredArtwork = DUMMY_ARTWORKS.find(obj => obj.onFrontpage === true);
+type TProps = { artworks: TArtworkListItemModel[] };
+
+export default function HeroSection({ artworks }: TProps) {
+  const featuredArtwork = artworks.find(
+    artwork => artwork.onFrontpage === true,
+  );
+
   const { artwork_id, image, title, artist }: TArtworkListItemModel =
     featuredArtwork!;
   return (

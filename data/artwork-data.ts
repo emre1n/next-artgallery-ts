@@ -23,7 +23,7 @@ export const DUMMY_ARTWORKS = [
     description:
       'Van Gogh has described with joy his visit to the Mediterranean shore near Arles at the fishing village of Sainte-Maries, where he painted and drew for several days. It was a new world for him, and he responded to it with his usual eagerness and excitement. June 1888. Van Gogh Museum, Amsterdam',
     isFeatured: true,
-    onFrontpage: true,
+    onFrontpage: false,
     edition: 100,
     remaining_edition: 72,
     price: 200,
@@ -38,7 +38,7 @@ export const DUMMY_ARTWORKS = [
     description:
       'Landscape at Collioure is an oil-on-canvas painting by French artist Henri Matisse from 1905. It is typical of his Fauvist style of the period. It is part of the collection of the Museum of Modern Art, in New York.',
     isFeatured: true,
-    onFrontpage: false,
+    onFrontpage: true,
     edition: 100,
     remaining_edition: 72,
     price: 200,

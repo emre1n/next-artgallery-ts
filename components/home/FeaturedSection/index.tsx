@@ -1,14 +1,15 @@
+'use client';
+
 import Link from 'next/link';
 
 import { TArtworkListItemModel } from '@/lib/models/artwork.model';
+import { useGalleryStore } from '@/stores/store';
 
 import ArtworkItem from '../../shared/ArtworkItem';
 
-type FeaturedListProps = {
-  artworks: TArtworkListItemModel[];
-};
+type TProps = { artworks: TArtworkListItemModel[] };
 
-export default function FeaturedSection({ artworks }: FeaturedListProps) {
+export default function FeaturedSection({ artworks }: TProps) {
   return (
     <section className="flex flex-col justify-center gap-8">
       <h3 className="text-lg">Featured artworks</h3>
