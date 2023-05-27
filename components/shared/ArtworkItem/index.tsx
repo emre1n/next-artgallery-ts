@@ -29,14 +29,14 @@ function ArtworkItem({
           />
         </div>
         <div>
-          <p className="text-lg text-gray-main">{artist}</p>
-          <p className="text-xl italic text-gray-lightlabel">{title}</p>
+          <p className="text-lg text-primary">{artist}</p>
+          <p className="text-xl italic text-secondary">{title}</p>
         </div>
       </div>
       <div>
-        <p className="text-sm text-gray-main">{`${edition} editions`}</p>
-        <p className="text-sm text-gray-main">{`${remaining_edition}/${edition} remaining`}</p>
-        <p className="text-sm font-bold text-gray-main">{`${price} ${currency}`}</p>
+        <p className="text-sm text-primary">{`${edition} editions`}</p>
+        <p className="text-sm text-primary">{`${remaining_edition}/${edition} remaining`}</p>
+        <p className="text-sm font-bold text-primary">{`${price} ${currency}`}</p>
       </div>
     </div>
   );

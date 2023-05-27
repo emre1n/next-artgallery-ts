@@ -30,15 +30,15 @@ export default function HeroSection({ artworks }: TProps) {
           </Link>
         </div>
         <div className="flex w-full flex-col">
-          <p className="text-xl text-gray-main">{artist}</p>
-          <p className="text-xl italic text-gray-lightlabel">{title}</p>
+          <p className="text-xl text-primary">{artist}</p>
+          <p className="text-xl italic text-secondary">{title}</p>
         </div>
       </aside>
       <aside className="flex flex-col items-center justify-center md:w-1/2">
-        <h2 className="font-serif text-4xl">
+        <h2 className="font-serif text-3xl text-primary lg:text-4xl">
           Discover the brilliant works of contemporary artists
         </h2>
-        <p className="font-serif text-xl">
+        <p className="font-serif text-lg text-secondary lg:text-xl">
           Discover art works from our collection of contemporary pieces
           <br />
           Our wide variety of curated galleries and local exhibitions presents

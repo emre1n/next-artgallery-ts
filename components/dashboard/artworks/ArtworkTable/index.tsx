@@ -55,7 +55,7 @@ const ArtworkTable = ({ data }: TProps) => {
   return (
     <>
       <table className="text-sm">
-        <thead className="bg-gray-300">
+        <thead className="bg-lightgray">
           {table.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map(header => (
@@ -73,7 +73,7 @@ const ArtworkTable = ({ data }: TProps) => {
         </thead>
         <tbody className="border-b">
           {table.getRowModel().rows.map(row => (
-            <tr className="border-b border-b-gray-300" key={row.id}>
+            <tr className="border-b border-lightgray" key={row.id}>
               {row.getVisibleCells().map(cell => (
                 <td key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -82,7 +82,7 @@ const ArtworkTable = ({ data }: TProps) => {
             </tr>
           ))}
         </tbody>
-        <tfoot className="text-gray-300">
+        <tfoot className="text-lightgray">
           {table.getFooterGroups().map(footerGroup => (
             <tr key={footerGroup.id}>
               {footerGroup.headers.map(header => (

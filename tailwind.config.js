@@ -12,12 +12,10 @@ module.exports = {
         serif: ['var(--font-noto-serif)'],
       },
       colors: {
-        gray: {
-          main: '#060606',
-          lightlabel: '#484848',
-          text: '#94A3B8',
-          background: '#F1F5F9',
-        },
+        primary: '#060606',
+        secondary: '#484848',
+        lightgray: '#94A3B8',
+        background: '#F1F5F9',
       },
     },
   },

@@ -19,18 +19,18 @@ const NavBar = () => {
     <header className="sticky top-0 z-30 flex h-16 w-full items-center justify-between bg-white px-8">
       {isOpen ? (
         <div className="absolute left-0 top-16 h-screen w-full bg-white md:hidden">
-          <ul className="flex flex-col items-center text-gray-text">
-            <li className="border-b border-white py-2 duration-500 hover:border-black hover:text-black">
+          <ul className="flex flex-col items-center text-lightgray">
+            <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
               <Link href="/collection" onClick={toggleMenu}>
                 Collection
               </Link>
             </li>
-            <li className="border-b border-white py-2 duration-500 hover:border-black hover:text-black">
+            <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
               <Link href="/add-new-artwork" onClick={toggleMenu}>
                 Add New Artwork
               </Link>
             </li>
-            <li className="border-b border-white py-2 duration-500 hover:border-black hover:text-black">
+            <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
               <Link href="/login" onClick={toggleMenu}>
                 Sign in
               </Link>
@@ -39,7 +39,13 @@ const NavBar = () => {
         </div>
       ) : null}
       <Link className="max-w-[136px]" href="/">
-        <Image src={Logo} width={600} height={600} alt="Gallery Logo" />
+        <Image
+          src={Logo}
+          width={600}
+          height={600}
+          alt="Gallery Logo"
+          priority={true}
+        />
       </Link>
       <nav>
         {isOpen ? (
@@ -56,14 +62,14 @@ const NavBar = () => {
           />
         )}
 
-        <ul className="hidden gap-8 text-gray-text md:flex">
-          <li className="border-b border-white py-2 duration-500 hover:border-black hover:text-black">
+        <ul className="hidden gap-8 text-lightgray md:flex">
+          <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
             <Link href="/collection">Collection</Link>
           </li>
-          <li className="border-b border-white py-2 duration-500 hover:border-black hover:text-black">
+          <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
             <Link href="/dashboard">Dashboard</Link>
           </li>
-          <li className="border-b border-white py-2 duration-500 hover:border-black hover:text-black">
+          <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
             <Link href="/login">Sign in</Link>
           </li>
         </ul>
