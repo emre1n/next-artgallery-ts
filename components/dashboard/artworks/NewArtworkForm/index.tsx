@@ -1,13 +1,20 @@
 'use client';
 
+import { useState } from 'react';
+
 import { CURRENCY_CODES } from '@/libs/constants/CURRENCY_CODES';
 import { TArtworkListItemModel } from '@/libs/models/artwork.model';
+import { useGalleryStore } from '@/stores/store';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { v4 as uuidv4 } from 'uuid';
 import * as Yup from 'yup';
 
 export default function AddNewArtworkForm() {
+  const addArtwork = useGalleryStore(store => store.addArtwork);
+  const [selectedImage, setSelectedImage] = useState('');
+  const [selectedFile, setSelectedFile] = useState<File>();
+
   const validationSchemaAddForm = Yup.object().shape({
     image: Yup.mixed().required('Please select an image file'),
     title: Yup.string().min(2).required(),
@@ -22,7 +29,15 @@ export default function AddNewArtworkForm() {
   });
 
   const addArtworkHandler = (data: TArtworkListItemModel) => {
+    if (data.image) {
+      const file = data.image[0];
+      const blob = new Blob([file], { type: 'text/plain' });
+      const convertedFile = new File([file], file);
+      setSelectedImage(URL.createObjectURL(blob));
+      setSelectedFile(convertedFile);
+    }
     console.log('Artwork Data', data);
+    addArtwork(data);
   };
 
   const {

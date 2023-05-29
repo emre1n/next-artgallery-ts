@@ -4,6 +4,7 @@ import { create } from 'zustand';
 
 type TGalleryStore = {
   artworks: TArtworkListItemModel[];
+  addArtwork: (artwork: TArtworkListItemModel) => void;
 };
 
 export const useGalleryStore = create<TGalleryStore>()(set => ({
