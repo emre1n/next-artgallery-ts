@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 
-import { CURRENCY_CODES } from '@/libs/constants/CURRENCY_CODES';
-import { TArtworkListItemModel } from '@/libs/models/artwork.model';
+import { CURRENCY_CODES } from '@/lib/constants/CURRENCY_CODES';
+import { TArtworkListItemModel } from '@/lib/models/artwork.model';
 import { useGalleryStore } from '@/stores/store';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';

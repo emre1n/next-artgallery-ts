@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 
-import { TArtworkListItemModel } from '@/libs/models/artwork.model';
+import { TArtworkListItemModel } from '@/lib/models/artwork.model';
 
 type ArtworkProps = TArtworkListItemModel;
 

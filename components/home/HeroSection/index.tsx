@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { TArtworkListItemModel } from '@/libs/models/artwork.model';
+import { TArtworkListItemModel } from '@/lib/models/artwork.model';
 
 type TProps = { artworks: TArtworkListItemModel[] };
 
