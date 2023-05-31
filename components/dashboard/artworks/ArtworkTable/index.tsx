@@ -1,6 +1,6 @@
 'use client';
 
-import { TArtworkListItemModel } from '@/lib/models/artwork.model';
+import { TArtworkListItemModel } from '@/libs/models/artwork.model';
 import {
   createColumnHelper,
   flexRender,

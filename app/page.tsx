@@ -1,27 +1,27 @@
-'use client';
-
-import { useEffect } from 'react';
-
-import { GetServerSideProps } from 'next';
+import { useEffect, useState } from 'react';
 
 import FeaturedSection from '@/components/home/FeaturedSection';
 import HeroSection from '@/components/home/HeroSection';
-import { TArtworkListItemModel } from '@/lib/models/artwork.model';
+import { DUMMY_ARTWORKS } from '@/data/artwork-data';
+import { getPrismaData } from '@/libs/db-service';
+import { TArtworkListItemModel } from '@/libs/models/artwork.model';
+import prismaGenerate from '@/prisma/create';
+import { deleteArtworks } from '@/prisma/delete';
 import { useGalleryStore } from '@/stores/store';
 import { PrismaClient } from '@prisma/client';
 
-type TProps = {
-  data: TArtworkListItemModel[];
-};
+import getArtworks from './actions/getArtworks';
 
-export default function Home({ data }: TProps) {
-  const getArtworks = useGalleryStore(store => store.fetchArtworks);
-  const artworks = useGalleryStore(store => store.artworks);
+type TProps = { artworks: TArtworkListItemModel[] };
 
-  useEffect(() => {
-    getArtworks(data);
-  }, [data, getArtworks]);
+export default async function Home() {
+  // const fetchArtworks = useGalleryStore(store => store.fetchArtworks);
+  // const artworks = useGalleryStore(store => store.artworks);
+  // fetchArtworks();
+  // console.log('state', artworksState);
+  const artworks = await getPrismaData();
 
+  console.log('prisma', artworks);
   return (
     <div className="flex w-full flex-col justify-center gap-8 md:gap-16">
       <HeroSection artworks={artworks} />
@@ -29,15 +29,3 @@ export default function Home({ data }: TProps) {
     </div>
   );
 }
-
-type TPrismaProps = {
-  data: TArtworkListItemModel[];
-};
-
-export const getServerSideProps: GetServerSideProps<
-  TPrismaProps
-> = async () => {
-  const prisma = new PrismaClient();
-  const data = await prisma.artwork.findMany();
-  return { props: { data } };
-};

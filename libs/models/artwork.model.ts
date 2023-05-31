@@ -1,4 +1,5 @@
 export type TArtworkListItemModel = {
+  id?: number;
   artwork_id: string;
   image: string;
   title: string;
@@ -10,4 +11,5 @@ export type TArtworkListItemModel = {
   remaining_edition: number;
   price: number;
   currency: string;
+  createdAt?: Date;
 };
