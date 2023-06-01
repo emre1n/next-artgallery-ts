@@ -2,13 +2,12 @@
 
 import { useState } from 'react';
 
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { BsList } from 'react-icons/bs';
 import { BsX } from 'react-icons/bs';
 
-import Logo from '../../../public/logos/logo1.png';
+import Logo from '../Logo';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,15 +37,7 @@ const NavBar = () => {
           </ul>
         </div>
       ) : null}
-      <Link className="max-w-[136px]" href="/">
-        <Image
-          src={Logo}
-          width={600}
-          height={600}
-          alt="Gallery Logo"
-          priority={true}
-        />
-      </Link>
+      <Logo />
       <nav>
         {isOpen ? (
           <BsX

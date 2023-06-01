@@ -1,10 +1,11 @@
-'use client';
-
 import ArtworkList from '@/components/collection/ArtworkList';
-import { useGalleryStore } from '@/stores/store';
+import { getPrismaData } from '@/libs/db-service';
 
-function Collection() {
-  const artworks = useGalleryStore(store => store.artworks);
+// import { useGalleryStore } from '@/stores/store';
+
+async function Collection() {
+  // const artworks = useGalleryStore(store => store.artworks);
+  const artworks = await getPrismaData();
 
   return (
     <section>

@@ -1,16 +1,7 @@
-import { useEffect, useState } from 'react';
-
 import FeaturedSection from '@/components/home/FeaturedSection';
 import HeroSection from '@/components/home/HeroSection';
-import { DUMMY_ARTWORKS } from '@/data/artwork-data';
 import { getPrismaData } from '@/libs/db-service';
 import { TArtworkListItemModel } from '@/libs/models/artwork.model';
-import prismaGenerate from '@/prisma/create';
-import { deleteArtworks } from '@/prisma/delete';
-import { useGalleryStore } from '@/stores/store';
-import { PrismaClient } from '@prisma/client';
-
-import getArtworks from './actions/getArtworks';
 
 type TProps = { artworks: TArtworkListItemModel[] };
 
