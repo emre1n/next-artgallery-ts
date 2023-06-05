@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 import { TArtworkListItemModel } from '@/libs/models/artwork.model';

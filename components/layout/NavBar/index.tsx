@@ -1,19 +1,28 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import Link from 'next/link';
 
+import MenuItem from '@/components/shared/MenuItem';
+import useRegisterModal from '@/stores/store';
 import { BsList } from 'react-icons/bs';
 import { BsX } from 'react-icons/bs';
 
 import Logo from '../Logo';
 
 const NavBar = () => {
+  const registerModal = useRegisterModal();
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = useCallback(() => {
+    setIsOpen(value => !value);
+  }, []);
+
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const toggleUserMenu = useCallback(() => {
+    setIsUserMenuOpen(value => !value);
+  }, []);
+
   return (
     <header className="sticky top-0 z-30 flex h-16 w-full items-center justify-between bg-white px-8">
       {isOpen ? (
@@ -25,8 +34,8 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
-              <Link href="/add-new-artwork" onClick={toggleMenu}>
-                Add New Artwork
+              <Link href="/dashboard" onClick={toggleMenu}>
+                Dashboard
               </Link>
             </li>
             <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
@@ -60,10 +69,18 @@ const NavBar = () => {
           <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
             <Link href="/dashboard">Dashboard</Link>
           </li>
-          <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
-            <Link href="/login">Sign in</Link>
+          <li className="cursor-pointer border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
+            <div onClick={toggleUserMenu}>Login</div>
           </li>
         </ul>
+        {isUserMenuOpen && (
+          <div className="absolute right-8 top-16 border text-lightgray">
+            <>
+              <MenuItem onClick={registerModal.onOpen} label="Sign up" />
+              <MenuItem onClick={() => {}} label="Sign in" />
+            </>
+          </div>
+        )}
       </nav>
     </header>
   );

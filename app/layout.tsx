@@ -1,9 +1,11 @@
 import Footer from '@/components/layout/Footer';
 import NavBar from '@/components/layout/NavBar';
+import RegisterModal from '@/components/modals/RegisterModal';
 
 import './globals.css';
 
 import { lato, noto_serif } from './fonts';
+import ToasterProvider from './providers/ToasterProvider';
 
 export const metadata = {
   title: 'OA-Next',
@@ -21,6 +23,8 @@ export default function RootLayout({
       className={`${lato.variable} ${noto_serif.variable} relative flex flex-col items-center justify-center`}
     >
       <body className="flex min-h-screen w-full max-w-[1800px] flex-col items-center justify-between gap-8 overflow-x-hidden md:gap-16">
+        <ToasterProvider />
+        <RegisterModal />
         <NavBar />
         <main className="w-full px-10 md:px-20">{children}</main>
         <Footer />
