@@ -81,12 +81,6 @@ const RegisterModal = () => {
       <hr />
       <Button
         outline
-        label="Continue with Email"
-        icon={AiOutlineMail}
-        onClick={() => {}}
-      />
-      <Button
-        outline
         label="Continue with Github"
         icon={AiFillGithub}
         onClick={() => {}}
