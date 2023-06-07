@@ -3,7 +3,7 @@
 import Image from 'next/image';
 
 import { TArtworkListItemModel } from '@/libs/models/artwork.model';
-import { useGalleryStore } from '@/stores/store';
+import { useGalleryStore } from '@/stores/useGalleryStore';
 
 type TProps = { artwork_id: string };
 

@@ -29,18 +29,19 @@ const Input = ({
       {formatPrice && (
         <BiDollar size={24} className="absolute left-2 top-5 text-secondary" />
       )}
-      <input
-        id={id}
-        disabled={disabled}
-        {...register(id, { required })}
-        placeholder=" "
-        type={type}
-        className={`
+      <form>
+        <input
+          id={id}
+          disabled={disabled}
+          {...register(id, { required })}
+          placeholder=" "
+          type={type}
+          autoComplete=""
+          className={`
         peer
         w-full
         rounded-md
         border-2
-       
         bg-background
         p-4
         pt-6
@@ -52,9 +53,9 @@ const Input = ({
         ${errors[id] ? 'border-red-500' : 'border-lightgray'}
         ${errors[id] ? 'focus:border-red-500' : 'focus:border-secondary'}
         `}
-      />
-      <label
-        className={`
+        />
+        <label
+          className={`
       text-md
       absolute
       top-5
@@ -70,9 +71,10 @@ const Input = ({
       peer-focus:scale-75
       ${errors[id] ? 'text-red-500' : 'text-lightgray'}
       `}
-      >
-        {label}
-      </label>
+        >
+          {label}
+        </label>
+      </form>
     </div>
   );
 };
