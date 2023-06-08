@@ -2,7 +2,6 @@
 
 import { CURRENCY_CODES } from '@/libs/constants/CURRENCY_CODES';
 import { TArtworkListItemModel } from '@/libs/models/artwork.model';
-import { addNewArtwork } from '@/prisma/create';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { v4 as uuidv4 } from 'uuid';

@@ -7,10 +7,11 @@ import Heading from '@/components/shared/Heading';
 import Button from '@/components/ui/Button';
 import useLoginModal from '@/stores/useLoginModal';
 import useRegisterModal from '@/stores/useRegisterModal';
+import { yupResolver } from '@hookform/resolvers/yup';
 import axios from 'axios';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { AiFillGithub } from 'react-icons/ai';
+import * as Yup from 'yup';
 
 import Modal from '../Modal';
 
@@ -19,11 +20,20 @@ const RegisterModal = () => {
   const loginModal = useLoginModal();
   const [isLoading, setIsLoading] = useState(false);
 
+  const validationSchemaNewUser = Yup.object().shape({
+    name: Yup.string().required('Please enter your name'),
+    email: Yup.string().email().required('Please enter a valid email'),
+    password: Yup.string()
+      .min(8, 'Password must be at least 8 characters')
+      .required('Please enter a password'),
+  });
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FieldValues>({
+    resolver: yupResolver(validationSchemaNewUser),
     defaultValues: {
       name: '',
       email: '',
