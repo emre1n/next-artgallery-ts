@@ -4,17 +4,17 @@ import { useCallback, useState } from 'react';
 
 import Link from 'next/link';
 
+import { SafeUser } from '@/app/types';
 import MenuItem from '@/components/shared/MenuItem';
 import useLoginModal from '@/stores/useLoginModal';
 import useRegisterModal from '@/stores/useRegisterModal';
-import { User } from '@prisma/client';
 import { BsList, BsX } from 'react-icons/bs';
 
 import Logo from '../Logo';
 import SignInSignOut from '../SignInSignOut';
 
 type TNavbarProps = {
-  currentUser?: User | null;
+  currentUser?: SafeUser | null;
 };
 
 const NavBar = ({ currentUser }: TNavbarProps) => {

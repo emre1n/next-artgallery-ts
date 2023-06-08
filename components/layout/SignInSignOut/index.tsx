@@ -2,14 +2,12 @@
 
 import React from 'react';
 
-import { signOut } from 'next-auth/react';
-
+import { SafeUser } from '@/app/types';
 import useLoginModal from '@/stores/useLoginModal';
 import useSignOutModal from '@/stores/useSignOutModal';
-import { User } from '@prisma/client';
 
 type TProps = {
-  currentUser?: User | null;
+  currentUser?: SafeUser | null;
 };
 
 const SignInSignOut = ({ currentUser }: TProps) => {

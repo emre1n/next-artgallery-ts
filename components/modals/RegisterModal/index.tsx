@@ -81,12 +81,12 @@ const RegisterModal = () => {
   const footerContent = (
     <div className="mt-3 flex flex-col gap-4">
       <hr />
-      <Button
+      {/* <Button
         outline
         label="Continue with Github"
         icon={AiFillGithub}
         onClick={() => {}}
-      />
+      /> */}
       <div className="mt-4 text-center font-light text-lightgray">
         <div className="flex flex-row items-center justify-center gap-2 text-center">
           <div>Already have an account?</div>
