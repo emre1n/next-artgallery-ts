@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
@@ -55,6 +55,11 @@ const LoginModal = () => {
     });
   };
 
+  const toggleLoginRegisterModal = useCallback(() => {
+    loginModal.onClose();
+    registerModal.onOpen();
+  }, [loginModal, registerModal]);
+
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Heading title="Welcome back" subtitle="Login to your account!" />
@@ -91,10 +96,7 @@ const LoginModal = () => {
         <div className="flex flex-row items-center justify-center gap-2 text-center">
           <div>If you do not have an account?</div>
           <div
-            onClick={() => {
-              loginModal.onClose();
-              registerModal.onOpen();
-            }}
+            onClick={toggleLoginRegisterModal}
             className="cursor-pointer text-secondary hover:underline"
           >
             Sign up

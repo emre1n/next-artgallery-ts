@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import Input from '@/components/inputs/Input';
 import Heading from '@/components/shared/Heading';
@@ -47,6 +47,11 @@ const RegisterModal = () => {
       });
   };
 
+  const toggleRegisterLoginModal = useCallback(() => {
+    registerModal.onOpen();
+    loginModal.onClose();
+  }, [loginModal, registerModal]);
+
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Heading title="Welcome to ONE ART" subtitle="Create an account!" />
@@ -91,10 +96,7 @@ const RegisterModal = () => {
         <div className="flex flex-row items-center justify-center gap-2 text-center">
           <div>Already have an account?</div>
           <div
-            onClick={() => {
-              registerModal.onClose();
-              loginModal.onOpen();
-            }}
+            onClick={toggleRegisterLoginModal}
             className="cursor-pointer text-secondary hover:underline"
           >
             Sign in
