@@ -2,6 +2,7 @@ import Footer from '@/components/layout/Footer';
 import NavBar from '@/components/layout/NavBar';
 import LoginModal from '@/components/modals/LoginModal';
 import RegisterModal from '@/components/modals/RegisterModal';
+import SignOutModal from '@/components/modals/SignOutModal';
 
 import './globals.css';
 
@@ -20,6 +21,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const currentUser = await getCurrentUser();
+
   return (
     <html
       lang="en"
@@ -27,6 +29,7 @@ export default async function RootLayout({
     >
       <body className="flex min-h-screen w-full max-w-[1800px] flex-col items-center justify-between gap-8 overflow-x-hidden md:gap-16">
         <ToasterProvider />
+        <SignOutModal />
         <LoginModal />
         <RegisterModal />
         <NavBar currentUser={currentUser} />

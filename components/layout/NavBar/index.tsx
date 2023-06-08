@@ -2,17 +2,16 @@
 
 import { useCallback, useState } from 'react';
 
-import { signOut } from 'next-auth/react';
 import Link from 'next/link';
 
 import MenuItem from '@/components/shared/MenuItem';
 import useLoginModal from '@/stores/useLoginModal';
 import useRegisterModal from '@/stores/useRegisterModal';
 import { User } from '@prisma/client';
-import { BsList } from 'react-icons/bs';
-import { BsX } from 'react-icons/bs';
+import { BsList, BsX } from 'react-icons/bs';
 
 import Logo from '../Logo';
+import SignInSignOut from '../SignInSignOut';
 
 type TNavbarProps = {
   currentUser?: User | null;
@@ -21,10 +20,8 @@ type TNavbarProps = {
 const NavBar = ({ currentUser }: TNavbarProps) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
+
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = useCallback(() => {
-    setIsOpen(value => !value);
-  }, []);
 
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const toggleUserMenu = useCallback(() => {
@@ -37,19 +34,17 @@ const NavBar = ({ currentUser }: TNavbarProps) => {
         <div className="absolute left-0 top-16 h-screen w-full bg-white md:hidden">
           <ul className="flex flex-col items-center text-lightgray">
             <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
-              <Link href="/collection" onClick={toggleMenu}>
-                Collection
+              <Link href="/collection">
+                <button>Collection</button>
               </Link>
             </li>
             <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
-              <Link href="/dashboard" onClick={toggleMenu}>
-                Dashboard
+              <Link href="/dashboard">
+                <button>Dashboard</button>
               </Link>
             </li>
             <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
-              <Link href="/login" onClick={toggleMenu}>
-                Sign in
-              </Link>
+              <button>Signin</button>
             </li>
           </ul>
         </div>
@@ -60,13 +55,17 @@ const NavBar = ({ currentUser }: TNavbarProps) => {
           <BsX
             className="transition-all hover:cursor-pointer active:scale-90 md:hidden"
             size={20}
-            onClick={toggleMenu}
+            onClick={() => {
+              setIsOpen(false);
+            }}
           />
         ) : (
           <BsList
             className="transition-all hover:cursor-pointer active:scale-90 md:hidden"
             size={20}
-            onClick={toggleMenu}
+            onClick={() => {
+              setIsOpen(true);
+            }}
           />
         )}
 
@@ -78,11 +77,7 @@ const NavBar = ({ currentUser }: TNavbarProps) => {
             <Link href="/dashboard">Dashboard</Link>
           </li>
           <li className="cursor-pointer border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
-            {currentUser ? (
-              <div onClick={() => signOut()}>Sign out</div>
-            ) : (
-              <div onClick={toggleUserMenu}>Sign in</div>
-            )}
+            <SignInSignOut currentUser={currentUser} />
           </li>
         </ul>
         {isUserMenuOpen && (
@@ -93,7 +88,7 @@ const NavBar = ({ currentUser }: TNavbarProps) => {
                   loginModal.onOpen();
                   toggleUserMenu();
                 }}
-                label="Sign in"
+                label="Signin"
               />
               <MenuItem
                 onClick={() => {

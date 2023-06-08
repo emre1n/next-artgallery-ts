@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Input from '@/components/inputs/Input';
 import Heading from '@/components/shared/Heading';
 import Button from '@/components/ui/Button';
+import useLoginModal from '@/stores/useLoginModal';
 import useRegisterModal from '@/stores/useRegisterModal';
 import axios from 'axios';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
@@ -15,6 +16,7 @@ import Modal from '../Modal';
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
   const [isLoading, setIsLoading] = useState(false);
 
   const {
@@ -89,10 +91,13 @@ const RegisterModal = () => {
         <div className="flex flex-row items-center justify-center gap-2 text-center">
           <div>Already have an account?</div>
           <div
-            onClick={registerModal.onClose}
+            onClick={() => {
+              registerModal.onClose();
+              loginModal.onOpen();
+            }}
             className="cursor-pointer text-secondary hover:underline"
           >
-            Log in
+            Sign in
           </div>
         </div>
       </div>

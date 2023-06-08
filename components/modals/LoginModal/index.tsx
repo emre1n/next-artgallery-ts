@@ -89,12 +89,15 @@ const LoginModal = () => {
       />
       <div className="mt-4 text-center font-light text-lightgray">
         <div className="flex flex-row items-center justify-center gap-2 text-center">
-          <div>Already have an account?</div>
+          <div>If you do not have an account?</div>
           <div
-            onClick={loginModal.onClose}
+            onClick={() => {
+              loginModal.onClose();
+              registerModal.onOpen();
+            }}
             className="cursor-pointer text-secondary hover:underline"
           >
-            Log in
+            Sign up
           </div>
         </div>
       </div>
