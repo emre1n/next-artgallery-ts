@@ -2,12 +2,17 @@
 
 import { CURRENCY_CODES } from '@/libs/constants/CURRENCY_CODES';
 import { TArtworkListItemModel } from '@/libs/models/artwork.model';
+import { useGalleryStore } from '@/stores/useGalleryStore';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { v4 as uuidv4 } from 'uuid';
 import * as Yup from 'yup';
 
+import ImageUpload from '../ImageUpload';
+
 export default function AddNewArtworkForm() {
+  const addArtwork = useGalleryStore(store => store.addArtwork);
+
   const validationSchemaAddForm = Yup.object().shape({
     image: Yup.mixed().required('Please select an image file'),
     title: Yup.string().min(2).required(),
@@ -22,13 +27,16 @@ export default function AddNewArtworkForm() {
   });
 
   const addArtworkHandler = (data: TArtworkListItemModel) => {
+    data.remaining_edition = data.edition;
     console.log('Artwork Data', data);
-    // addNewArtwork(data);
+    addArtwork(data);
   };
 
   const {
     register,
     handleSubmit,
+    watch,
+    setValue,
     formState: { errors },
   } = useForm<TArtworkListItemModel>({
     resolver: yupResolver(validationSchemaAddForm),
@@ -41,11 +49,19 @@ export default function AddNewArtworkForm() {
       isFeatured: false,
       onFrontpage: false,
       edition: 0,
-      // remaining_edition: 0,
+      remaining_edition: 0,
       price: 0,
       currency: '',
     },
   });
+  const image = watch('image');
+  const setCustomValue = (id: any, value: any) => {
+    setValue(id, value, {
+      shouldDirty: true,
+      shouldTouch: true,
+      shouldValidate: true,
+    });
+  };
 
   return (
     <form
@@ -103,6 +119,7 @@ export default function AddNewArtworkForm() {
           <label>Currency</label>
           <select
             {...register('currency')}
+            defaultValue={CURRENCY_CODES.keys[0]}
             className="border-b border-lightgray focus:outline-none"
           >
             {CURRENCY_CODES.keys.map(option => (
@@ -115,7 +132,7 @@ export default function AddNewArtworkForm() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2">
+      {/* <div className="flex flex-col gap-2">
         <label>Artwork Image</label>
         <input
           className="w-full text-sm text-lightgray
@@ -129,7 +146,11 @@ export default function AddNewArtworkForm() {
           {...register('image')}
         />
         <p>{errors.image?.message}</p>
-      </div>
+      </div> */}
+      <ImageUpload
+        value={image}
+        onChange={value => setCustomValue('image', value)}
+      />
       <div className="flex">
         <div className="flex gap-4">
           <label>Featured</label>
