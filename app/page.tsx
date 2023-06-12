@@ -4,6 +4,8 @@ import { DUMMY_ARTWORKS } from '@/data/artwork-data';
 import { getPrismaData } from '@/libs/db-service';
 import { TArtworkListItemModel } from '@/libs/models/artwork.model';
 
+import getArtworks from './actions/getArtworks';
+
 type TProps = { artworks: TArtworkListItemModel[] };
 
 export default async function Home() {
@@ -13,7 +15,7 @@ export default async function Home() {
   // console.log('state', artworksState);
 
   // const artworks = await getPrismaData();
-  const artworks = DUMMY_ARTWORKS;
+  const artworks = await getArtworks();
 
   console.log('prisma', artworks);
   return (

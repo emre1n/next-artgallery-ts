@@ -21,7 +21,7 @@ function ArtworkItem({
       <div className="flex flex-col gap-4">
         <div className="flex h-[300px]">
           <Image
-            className="object-cover object-center md:max-w-[282px]"
+            className="object-cover object-center transition hover:scale-105 md:max-w-[282px]"
             src={image}
             alt={title}
             width={800}
