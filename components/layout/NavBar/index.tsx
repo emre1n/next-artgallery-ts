@@ -38,11 +38,14 @@ const NavBar = ({ currentUser }: TNavbarProps) => {
                 <button>Collection</button>
               </Link>
             </li>
-            <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
-              <Link href="/dashboard">
-                <button>Dashboard</button>
-              </Link>
-            </li>
+            {currentUser && (
+              <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
+                <Link href="/dashboard">
+                  <button>Dashboard</button>
+                </Link>
+              </li>
+            )}
+
             <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
               <button>Signin</button>
             </li>
@@ -73,9 +76,11 @@ const NavBar = ({ currentUser }: TNavbarProps) => {
           <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
             <Link href="/collection">Collection</Link>
           </li>
-          <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
-            <Link href="/dashboard">Dashboard</Link>
-          </li>
+          {currentUser && (
+            <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
+              <Link href="/dashboard">Dashboard</Link>
+            </li>
+          )}
           <li className="cursor-pointer border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
             <SignInSignOut currentUser={currentUser} />
           </li>
