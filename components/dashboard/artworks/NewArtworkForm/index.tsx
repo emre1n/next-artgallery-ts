@@ -1,16 +1,21 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+
 import { CURRENCY_CODES } from '@/libs/constants/CURRENCY_CODES';
 import { TArtworkListItemModel } from '@/libs/models/artwork.model';
 import { useGalleryStore } from '@/stores/useGalleryStore';
 import { yupResolver } from '@hookform/resolvers/yup';
+import axios from 'axios';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { v4 as uuidv4 } from 'uuid';
 import * as Yup from 'yup';
 
 import ImageUpload from '../ImageUpload';
 
 export default function AddNewArtworkForm() {
+  const router = useRouter();
   const addArtwork = useGalleryStore(store => store.addArtwork);
 
   const validationSchemaAddForm = Yup.object().shape({
@@ -30,6 +35,16 @@ export default function AddNewArtworkForm() {
     data.remaining_edition = data.edition;
     console.log('Artwork Data', data);
     addArtwork(data);
+    axios
+      .post('/api/artworks', data)
+      .then(() => {
+        toast.success('Artwork Created!');
+        router.refresh();
+        reset();
+      })
+      .catch(() => {
+        toast.error('Something went wrong.');
+      });
   };
 
   const {
@@ -38,6 +53,7 @@ export default function AddNewArtworkForm() {
     watch,
     setValue,
     formState: { errors },
+    reset,
   } = useForm<TArtworkListItemModel>({
     resolver: yupResolver(validationSchemaAddForm),
     defaultValues: {
