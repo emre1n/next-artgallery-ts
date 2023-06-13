@@ -10,10 +10,8 @@ import Heading from '@/components/shared/Heading';
 import Button from '@/components/ui/Button';
 import useLoginModal from '@/stores/useLoginModal';
 import useRegisterModal from '@/stores/useRegisterModal';
-import axios from 'axios';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { AiFillGithub } from 'react-icons/ai';
 
 import Modal from '../Modal';
 
@@ -86,12 +84,6 @@ const LoginModal = () => {
   const footerContent = (
     <div className="mt-3 flex flex-col gap-4">
       <hr />
-      {/* <Button
-        outline
-        label="Continue with Github"
-        icon={AiFillGithub}
-        onClick={() => {}}
-      /> */}
       <div className="mt-4 text-center font-light text-lightgray">
         <div className="flex flex-row items-center justify-center gap-2 text-center">
           <div>If you do not have an account?</div>

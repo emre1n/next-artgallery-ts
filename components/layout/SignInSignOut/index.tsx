@@ -13,13 +13,10 @@ type TProps = {
 const SignInSignOut = ({ currentUser }: TProps) => {
   const loginModal = useLoginModal();
   const signOutModal = useSignOutModal();
-  //   const handleSignOut = () => {
-  //     signOut();
-  //   };
+
   return (
     <>
       {currentUser ? (
-        // <button onClick={handleSignOut}>Sign out</button>
         <button
           onClick={() => {
             signOutModal.onOpen();

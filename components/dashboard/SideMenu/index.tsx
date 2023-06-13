@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-import { icons } from 'react-icons';
 import { BsPalette } from 'react-icons/bs';
 
 const SideMenu = () => {

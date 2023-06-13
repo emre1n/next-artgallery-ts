@@ -3,7 +3,6 @@
 import Link from 'next/link';
 
 import { TArtworkListItemModel } from '@/libs/models/artwork.model';
-import { useGalleryStore } from '@/stores/useGalleryStore';
 
 import ArtworkItem from '../../shared/ArtworkItem';
 
