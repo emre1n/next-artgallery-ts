@@ -1,26 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { signOut } from 'next-auth/react';
 
-import { signIn, signOut } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
-
-import Input from '@/components/inputs/Input';
 import Heading from '@/components/shared/Heading';
-import Button from '@/components/ui/Button';
-import useLoginModal from '@/stores/useLoginModal';
-import useRegisterModal from '@/stores/useRegisterModal';
 import useSignOutModal from '@/stores/useSignOutModal';
-import axios from 'axios';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import toast from 'react-hot-toast';
-import { GoSignOut } from 'react-icons/go';
 
 import Modal from '../Modal';
 
 const SignOutModal = () => {
   const signOutModal = useSignOutModal();
-  // const [isLoading, setIsLoading] = useState(false);
 
   const handleSignOut = () => {
     signOut();
@@ -43,7 +31,6 @@ const SignOutModal = () => {
 
   return (
     <Modal
-      // disabled={isLoading}
       isOpen={signOutModal.isOpen}
       title="Sign out"
       actionLabel="Sign out"
