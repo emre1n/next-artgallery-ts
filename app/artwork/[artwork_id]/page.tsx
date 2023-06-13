@@ -12,7 +12,6 @@ export default function ArtworkDetailsPage({ params }: { params: TProps }) {
   const artwork: TArtworkListItemModel | undefined = artworks.find(
     artwork => artwork.artwork_id === params.artwork_id,
   );
-  console.log('params', params);
   return (
     <div className="flex max-w-4xl flex-col gap-16 bg-background p-16">
       <Image
