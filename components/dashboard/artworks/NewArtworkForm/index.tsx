@@ -26,7 +26,6 @@ export default function AddNewArtworkForm() {
     isFeatured: Yup.boolean(),
     onFrontpage: Yup.boolean(),
     edition: Yup.number().min(1).required(),
-    // remaining_edition: Yup.number().min(1).required(),
     price: Yup.number().min(1).required(),
     currency: Yup.string().min(2).required(),
   });
@@ -147,22 +146,6 @@ export default function AddNewArtworkForm() {
           <p className="text-red-500">{errors.currency?.message}</p>
         </div>
       </div>
-
-      {/* <div className="flex flex-col gap-2">
-        <label>Artwork Image</label>
-        <input
-          className="w-full text-sm text-lightgray
-          duration-500 file:mr-4
-          file:border-0 file:bg-gray-200
-          file:px-4
-          file:py-2 file:font-semibold
-          file:duration-500 hover:file:bg-primary hover:file:text-white
-        "
-          type="file"
-          {...register('image')}
-        />
-        <p>{errors.image?.message}</p>
-      </div> */}
       <ImageUpload
         value={image}
         onChange={value => setCustomValue('image', value)}
