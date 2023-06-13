@@ -26,7 +26,13 @@ export default function ArtworkDetailsPage({ params }: { params: TProps }) {
         <div className="text-xl font-bold text-primary">{artwork!.title}</div>
         <p className="italic text-secondary">{artwork!.artist}</p>
         <p className="text-secondary">{artwork!.description}</p>
-        {/* <p className="text-secondary">{artwork!.price}</p> */}
+        <hr />
+        <p className="text-secondary">
+          {`Price: ${artwork!.price} ${artwork!.currency}`}
+        </p>
+        <p className="text-secondary">{`Editions: ${
+          artwork!.remaining_edition
+        }/${artwork!.edition}`}</p>
       </div>
     </div>
   );
