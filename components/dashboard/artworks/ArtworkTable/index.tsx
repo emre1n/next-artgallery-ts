@@ -71,7 +71,7 @@ const ArtworkTable = ({ data }: TProps) => {
             </tr>
           ))}
         </thead>
-        <tbody className="border-b">
+        <tbody className="border-b text-center">
           {table.getRowModel().rows.map(row => (
             <tr className="border-b border-lightgray" key={row.id}>
               {row.getVisibleCells().map(cell => (
