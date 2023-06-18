@@ -14,7 +14,7 @@ export default async function ArtworksListPage() {
   // const data = useMemo(() => artworks, [artworks]);
 
   return (
-    <section className="flex w-full flex-col gap-4 px-8 py-4">
+    <section className="flex w-full flex-col items-center gap-4 px-8 py-4 md:items-start">
       <Link
         className="w-40 bg-lightgray px-4 py-1 text-white duration-500 hover:bg-background hover:text-primary"
         href="/dashboard/artworks/new"

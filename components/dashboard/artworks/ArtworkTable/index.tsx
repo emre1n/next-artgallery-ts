@@ -54,7 +54,7 @@ const ArtworkTable = ({ data }: TProps) => {
 
   return (
     <>
-      <table className="text-sm">
+      <table className="w-full text-xs md:text-sm">
         <thead className="bg-lightgray">
           {table.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id}>
