@@ -9,7 +9,6 @@ type TProps = { artworks: TArtworkListItemModel[] };
 export default async function Home() {
   const artworks = await getArtworks();
 
-  console.log('prisma', artworks);
   return (
     <div className="flex w-full flex-col justify-center gap-8 md:gap-16">
       <HeroSection artworks={artworks} />

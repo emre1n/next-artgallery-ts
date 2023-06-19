@@ -47,7 +47,7 @@ const NavBar = ({ currentUser }: TNavbarProps) => {
             )}
 
             <li className="border-b border-white py-2 duration-500 hover:border-primary hover:text-primary">
-              <button>Signin</button>
+              <SignInSignOut currentUser={currentUser} />
             </li>
           </ul>
         </div>
