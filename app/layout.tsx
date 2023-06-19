@@ -27,7 +27,7 @@ export default async function RootLayout({
       lang="en"
       className={`${lato.variable} ${noto_serif.variable} relative flex flex-col items-center justify-center`}
     >
-      <body className="flex min-h-screen w-full max-w-[1800px] flex-col items-center justify-between gap-8 overflow-x-hidden md:gap-16">
+      <body className="flex min-h-screen w-full flex-col items-center justify-between gap-8 overflow-x-hidden md:gap-16">
         <ToasterProvider />
         <SignOutModal />
         <LoginModal />
